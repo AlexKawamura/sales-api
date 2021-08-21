@@ -1,8 +1,10 @@
 package com.xbrain.salesapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,4 +16,7 @@ public class Vendedor {
     private String nome;
     @Column
     private int total_vendas;
+    @JsonIgnore
+    @OneToMany(mappedBy = "vendedor", cascade = CascadeType.ALL)
+    private List<Venda> vendas;
 }
