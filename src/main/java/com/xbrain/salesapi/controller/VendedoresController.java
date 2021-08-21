@@ -3,9 +3,8 @@ package com.xbrain.salesapi.controller;
 import com.xbrain.salesapi.model.Vendedor;
 import com.xbrain.salesapi.repository.VendedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +18,11 @@ public class VendedoresController {
     @GetMapping
     public List<Vendedor> listar() {
         return vendedorRepository.findAll();
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Vendedor novoVendedor(@RequestBody Vendedor vendedor) {
+        return vendedorRepository.save(vendedor);
     }
 }
