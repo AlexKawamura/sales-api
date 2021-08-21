@@ -24,4 +24,8 @@ public class Venda {
     void dataVenda() {
         this.dataVenda = new Date();
     }
+
+    public void designarVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
 }

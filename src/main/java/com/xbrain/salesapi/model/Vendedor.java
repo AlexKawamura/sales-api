@@ -19,4 +19,8 @@ public class Vendedor {
     @JsonIgnore
     @OneToMany(mappedBy = "vendedor", cascade = CascadeType.ALL)
     private List<Venda> vendas;
+
+    public void incrementarTotalVendas() {
+        this.total_vendas++;
+    }
 }
