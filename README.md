@@ -12,8 +12,8 @@ API REST para vendas utilizando Spring Boot
 * Não é necessário desenvolver front-end, apenas o back-end.
 
 ## Desenvolver os serviços REST:
-- Criar uma nova venda
-- Retornar a lista de vendedores com os campos: nome, total de vendas do vendedor e média de vendas diária, conforme o período informado por parâmetro 
+* Criar uma nova venda
+* Retornar a lista de vendedores com os campos: nome, total de vendas do vendedor e média de vendas diária, conforme o período informado por parâmetro 
 
 ### Testes
 * Desenvolver um serviço que seja capaz de gerar uma venda.
