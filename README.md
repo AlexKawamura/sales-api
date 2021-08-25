@@ -18,3 +18,23 @@ API REST para vendas utilizando Spring Boot
 ### Testes
 * Desenvolver um serviço que seja capaz de gerar uma venda.
 * Uma venda é composta por id, data da venda, valor, vendedor id e vendedor nome.
+
+## URL Paths
+### GET
+* "/vendedores" - Retorna todos os vendedores
+* "/vendedores/listar?dataInicial=2021-08-25&dataFinal=2021-09-25" - Retorna uma lista de vendedores com a média de vendas diárias calculada
+* "/vendas" - Retorna todas as vendas
+
+### POST
+* "/vendedores" - Cadastrar um novo vendedor
+```json
+{
+  "nome": "Alexandre Kawamura Tanaka"
+}
+```
+* "/vendas/{vendedorId}/novaVenda" - Cadastrar uma nova venda
+```json
+{
+    "valor": 100
+}
+```
