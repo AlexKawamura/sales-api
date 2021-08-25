@@ -15,12 +15,14 @@ public class Vendedor {
     @Column(nullable = false)
     private String nome;
     @Column
-    private int total_vendas;
+    private int totalVendas;
+    @Column
+    private float mediaVendasDiarias;
     @JsonIgnore
     @OneToMany(mappedBy = "vendedor", cascade = CascadeType.ALL)
     private List<Venda> vendas;
 
     public void incrementarTotalVendas() {
-        this.total_vendas++;
+        this.totalVendas++;
     }
 }

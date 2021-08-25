@@ -3,6 +3,8 @@ package com.xbrain.salesapi.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Data
@@ -11,9 +13,8 @@ public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "data_venda")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataVenda;
+    @Column(nullable = false)
+    private String dataVenda;
     @Column
     private Float valor;
     @ManyToOne
@@ -22,7 +23,9 @@ public class Venda {
 
     @PrePersist
     void dataVenda() {
-        this.dataVenda = new Date();
+        Date dataAtual = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        this.dataVenda = dateFormat.format(dataAtual);
     }
 
     public void designarVendedor(Vendedor vendedor) {
