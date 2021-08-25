@@ -36,7 +36,7 @@ public class VendasController {
         vendedorRepository.save(vendedor);
 
         Date dataAtual = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         venda.setDataVenda(dateFormat.format(dataAtual));
         venda.setVendedor(vendedor);
